@@ -2,6 +2,7 @@ connection: "the_look"
 
 # include all the views
 include: "/views/**/*.view"
+include: "/dcl_dashboard.dashboard"
 
 datagroup: thelook_david_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
@@ -96,7 +97,8 @@ explore: inventory_items {
   }
 }
 
-explore: orders {
+explore: orders_changed_name {
+  view_name: orders
   join: users {
     type: left_outer
     sql_on: ${orders.user_id} = ${users.id} ;;
