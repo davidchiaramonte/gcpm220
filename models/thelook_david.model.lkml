@@ -2,7 +2,7 @@ connection: "the_look"
 
 # include all the views
 include: "/views/**/*.view"
-include: "/dcl_dashboard.dashboard"
+include: "/*.dashboard"
 
 datagroup: thelook_david_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
