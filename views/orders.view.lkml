@@ -27,6 +27,16 @@ view: orders {
     sql: ${TABLE}.status ;;
   }
 
+
+  dimension: status_new {
+    type: string
+    sql: CASE
+         WHEN ${TABLE}.status = 'cancelled' THEN '{{ _localization['cancelled'] }}'
+         WHEN ${TABLE}.status = 'pending' THEN '{{ _localization['pending'] }}'
+         WHEN ${TABLE}.status = 'complete' THEN '{{ _localization['complete'] }}'
+         END ;;
+  }
+
   dimension: user_id {
     type: number
     # hidden: yes
