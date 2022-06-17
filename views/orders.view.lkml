@@ -1,4 +1,5 @@
 view: orders {
+  label: "orders"
   sql_table_name: demo_db.orders ;;
   drill_fields: [id]
 
