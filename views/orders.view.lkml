@@ -28,6 +28,13 @@ view: orders {
     sql: ${TABLE}.status ;;
   }
 
+  dimension: status_amit {
+    type: string
+    sql: CASE
+         WHEN ${TABLE}.status = 'cancelled' THEN 'Yes'
+         WHEN ${TABLE}.status = 'pending' THEN 'No'
+         END ;;
+  }
 
   dimension: status_new {
     type: string
